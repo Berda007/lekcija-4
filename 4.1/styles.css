@@ -1,0 +1,59 @@
+body{
+    font-family: sans-serif;
+}
+
+table {
+    width: 200px;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+}
+
+th {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+        background-color: #f2f2f2;
+}
+
+button {
+    cursor: pointer;
+}
+
+#mainContent {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+#formaDiv {
+    border: 2px solid black;
+    width: fit-content;
+    padding: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+#forma label{
+    display: inline-block;
+    width: 50px;
+}
+
+#forma input {
+    display: inline-block;
+    width: 140px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+#dodaj {
+    float: right;
+    margin-top: 5px;
+    padding: 2px 8px;
+}
