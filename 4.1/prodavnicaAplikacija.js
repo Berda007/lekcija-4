@@ -8,11 +8,17 @@ class Artikal{
     }
 }
 
-let monitor = new Artikal("monitor",165,"Ovo je monitor")
-let mis = new Artikal ("mis",20,"mis poprdis")
-let TV = new Artikal ("TV", 200, "Ovo je TV")
+let artikli = []
 
-let artikli = [monitor, mis, TV]
+if (localStorage.getItem("artikli")){
+    let ucitani = JSON.parse(localStorage.getItem("artikli"));
+    for (let i = 0; i < ucitani.length; i++) {
+        let a = ucitani[i];
+        let noviArtikal = new Artikal(a.naziv, a.cena, a.opis);
+        artikli.push(noviArtikal);
+    }
+}
+
 
 
 function kreirajRedove(){
@@ -63,7 +69,10 @@ function dodajArtikal(){
         let noviArtikal = new Artikal(naziv,cena,opis)
         artikli.push(noviArtikal)
 
+        localStorage.setItem("artikli", JSON.stringify(artikli));
+
         kreirajRedove()
+        form.reset();
     })
 }
 
