@@ -17,6 +17,7 @@ let artikli = [monitor, mis, TV]
 
 function kreirajRedove(){
     let tabela = document.querySelector("#artikli-telo")
+    tabela.innerHTML=""
     for (let i=0; i<artikli.length; i++){
         let tr = document.createElement("tr")
         let br = document.createElement("td")
@@ -49,5 +50,27 @@ function prikaziDetalje(artikal){
     detalji.appendChild(p)
 }
 
-document.addEventListener('DOMContentLoaded', kreirajRedove())
+function dodajArtikal(){
+    let dugme = document.querySelector("#dodaj")
+    dugme.addEventListener('click', function(){
+        let form = document.querySelector("#forma")
+        let formData = new FormData(form)
+
+        let naziv = formData.get("naziv")
+        let cena = formData.get("cena")
+        let opis = formData.get("opis")
+
+        let noviArtikal = new Artikal(naziv,cena,opis)
+        artikli.push(noviArtikal)
+
+        kreirajRedove()
+    })
+}
+
+function pokreniStranicu(){
+    kreirajRedove()
+    dodajArtikal()
+}
+
+document.addEventListener('DOMContentLoaded', pokreniStranicu())
 
