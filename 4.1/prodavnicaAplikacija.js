@@ -23,6 +23,11 @@ function kreirajRedove(){
         let naziv = document.createElement("td")
         let cena = document.createElement("td")
 
+        tr.addEventListener("click", function(){
+            prikaziDetalje(artikli[i])
+        })
+
+
         br.textContent= i+1
         naziv.textContent = artikli[i].naziv
         cena.textContent = artikli[i].cena
@@ -33,6 +38,15 @@ function kreirajRedove(){
 
         tabela.appendChild(tr)
     }
+}
+
+function prikaziDetalje(artikal){
+    let p = document.createElement("p")
+    p.innerHTML ="Naziv: "+artikal.naziv +"<br>Cena: "+artikal.cena+"<br>Opis: "+artikal.opis
+    let detalji = document.querySelector("#detalji")
+    detalji.style.display = "block";
+    detalji.innerHTML=""
+    detalji.appendChild(p)
 }
 
 document.addEventListener('DOMContentLoaded', kreirajRedove())

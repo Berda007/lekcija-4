@@ -31,7 +31,7 @@ button {
     gap: 40px;
 }
 
-#formaDiv {
+#formWrapper {
     border: 2px solid black;
     width: fit-content;
     padding: 10px;
@@ -56,4 +56,14 @@ button {
     float: right;
     margin-top: 5px;
     padding: 2px 8px;
+}
+
+#detalji{
+    display: none;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 10px;
+}
+#detalji p{
+    margin: 0;
 }
